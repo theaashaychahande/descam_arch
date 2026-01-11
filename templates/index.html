@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descam | High-End Malware Intelligence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="scanline"></div>
+    <div class="cyber-bg"></div>
+    <div class="cyber-grid"></div>
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <path d="m9 12 2 2 4-4" />
+                    </svg>
+                    DESCAM<span>.</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Dynamic Malware<span>.</span><br>Intelligence Hub</h1>
+            <p>Advanced behavioral detonation and static analysis for modern security teams. Detect, dissect, and defeat
+                emerging threats in real-time.</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="flash-messages">
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+            <div class="upload-terminal">
+                <form action="/analyze" method="post" enctype="multipart/form-data">
+                    <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                        <div class="upload-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="17 8 12 3 7 8" />
+                                <line x1="12" y1="3" x2="12" y2="15" />
+                            </svg>
+                        </div>
+                        <h3>Detonate New Malware</h3>
+                        <p style="margin-bottom: 2rem;">Drag and drop or click to upload executable, scripts, or
+                            archives.</p>
+                        <input type="file" name="file" id="fileInput" hidden onchange="this.form.submit()">
+                        <div class="btn-primary">Initialize Analysis</div>
+                    </div>
+                </form>
+            </div>
+
+            <section class="info-section">
+                <span class="section-tag">Documentation</span>
+                <h2 class="section-title">Understanding Intelligence Reports</h2>
+                <div class="doc-grid">
+                    <div class="doc-card">
+                        <h4>1. Analyst Technical Summary</h4>
+                        <p>A high-level synthesis of all detonation events. Our AI-driven summary translates raw kernel
+                            logs into human-readable intent, explaining exactly why a file is flagged as malicious or
+                            secure.</p>
+                    </div>
+                    <div class="doc-card">
+                        <h4>2. Dynamic Behavioral Detonation</h4>
+                        <p>A real-time timeline of every action taken by the malware in our isolated environment. We
+                            monitor process hollowing, registry persistence, and stealthy API hooks that traditional
+                            scanners miss.</p>
+                    </div>
+                    <div class="doc-card">
+                        <h4>3. MITRE ATT&CK&reg; Mapping</h4>
+                        <p>We map all detected behaviors to the global MITRE framework. This allows security teams to
+                            understand the specific tactics (TTPs) being used, such as T1055 (Process Injection) or
+                            T1497 (Virtualization Evasion).</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <span class="section-tag">Capabilities</span>
+                <h2 class="section-title">Accepted Submission Formats</h2>
+                <div class="format-matrix">
+                    <div class="format-tag">.EXE / .DLL</div>
+                    <div class="format-tag">.BAT / .PS1</div>
+                    <div class="format-tag">.PDF / .DOCX</div>
+                    <div class="format-tag">.ZIP / .7Z</div>
+                    <div class="format-tag">.MSI / .COM</div>
+                    <div class="format-tag">.VBS / .JS</div>
+                </div>
+                <p style="text-align: center; color: var(--text-muted); margin-top: 2rem; font-size: 0.9rem;">Our engine
+                    safely handles packed binaries, encrypted scripts, and multi-stage archives for deep recursive
+                    analysis.</p>
+            </section>
+
+            <section class="info-section" style="background: var(--bg-card); border-radius: 20px; padding: 60px;">
+                <div class="narrative">
+                    <span class="section-tag">Insight</span>
+                    <h2 class="section-title">Why Professional Analysis Matters</h2>
+                    <p>In the modern threat landscape, <strong>hash-based detection is obsolete</strong>. Advanced
+                        attackers use polymorphic code that changes its signature every second. Automated antivirus
+                        often fails to detect "Zero-Day" threats because they have no known signature.</p>
+                    <p>Professional manual and sandbox analysis at DESCAM goes deeper. We don't just look at what the
+                        file <em>is</em>; we look at what it <em>does</em>. By detonating threats in an isolated kernel,
+                        we reveal the hidden patterns of ransomware, spyware, and advanced persistent threats (APTs)
+                        before they touch your network.</p>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div style="color: var(--primary); margin-bottom: 1.5rem;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                                <line x1="12" y1="22.08" x2="12" y2="12" />
+                            </svg>
+                        </div>
+                        <h3>Deep Static Analysis</h3>
+                        <p>Detailed parsing of PE headers, section entropy, and critical API imports to identify
+                            malicious intent before execution.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div style="color: var(--primary); margin-bottom: 1.5rem;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </div>
+                        <h3>Dynamic Detonation</h3>
+                        <p>Real-time behavioral telemetry captured via kernel-level hooks. Monitor process hollowing,
+                            code injection, and C2 traffic.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div style="color: var(--primary); margin-bottom: 1.5rem;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="2" y1="12" x2="22" y2="12" />
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                            </svg>
+                        </div>
+                        <h3>Global Intelligence</h3>
+                        <p>Seamlessly synchronized with VirusTotal and the MITRE ATT&CK&reg; framework for
+                            industry-standard threat classification.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 DESCAM Intelligence Systems. All malware samples are processed in isolated memory-safe
+                detonation environments.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

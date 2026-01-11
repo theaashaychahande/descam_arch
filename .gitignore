@@ -1,0 +1,10 @@
+__pycache__/
+uploads/
+results.txt
+test.bat
+.gemini/
+*.pyc
+*.pyo
+*.pyd
+.vscode/
+.idea/
