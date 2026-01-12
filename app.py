@@ -5,11 +5,14 @@ import requests
 import time
 from flask import Flask, render_template, request, redirect, flash, session
 from werkzeug.utils import secure_filename
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = "descam_security_node" 
 UPLOAD_FOLDER = 'uploads'
-VT_API_KEY = "bffdc2f5a8b667df2830e8d2650d1e5bf154e351d565136770658888e8737fd0"
+VT_API_KEY = os.getenv('API_KEY')
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
